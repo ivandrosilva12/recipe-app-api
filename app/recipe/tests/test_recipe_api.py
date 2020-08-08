@@ -168,7 +168,7 @@ class PrivateRecipeApiTests(TestCase):
         """ Test updating a recipe with put """
         recipe = sample_recipe(user=self.user)
         recipe.tags.add(sample_tag(user=self.user))
-        
+
         payload = {
             'title': 'Spaghetti Carbonara',
             'time_minutes': 25,
@@ -183,4 +183,3 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(recipe.price, payload['price'])
         tags = recipe.tags.all()
         self.assertEqual(len(tags), 0)
-
